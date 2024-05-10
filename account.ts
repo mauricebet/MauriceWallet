@@ -29,3 +29,15 @@ export function loginAccount(userId: string, password: string): boolean {
 
     return false;
 }
+
+/**
+ *  Takes in an infoId, then calls another function related to that id
+ * 
+ * @param {number} infoId       - User's first name
+ * 
+ * @return {boolean}            - True if successfully registered account
+ */
+export function updateDetails(infoId: number): boolean {
+
+    return false;
+}
