@@ -1,0 +1,1 @@
+// This manages all wallets functions
