@@ -1,1 +1,0 @@
-// This handles the authentication and authorization processes
