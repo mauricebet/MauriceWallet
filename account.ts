@@ -37,7 +37,7 @@ export function loginAccount(userId: string, password: string): boolean {
  * 
  * @return {boolean}            - True if successfully registered account
  */
-export function updateDetails(infoId: number): boolean {
+export function updateDetail(infoId: number): boolean {
 
     return false;
 }
