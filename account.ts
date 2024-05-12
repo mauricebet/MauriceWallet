@@ -1,5 +1,15 @@
 // This handles the account processes
 
+interface UserData {
+    username: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
+    age: number;
+    wallet: number;
+}
+
 /**
  *  Takes in user details then registers that user if all details are valid
  * 
@@ -40,4 +50,15 @@ export function loginAccount(userId: string, password: string): boolean {
 export function updateDetail(infoId: number): boolean {
 
     return false;
+}
+
+/**
+ *  Takes in a username, then prints out the details of that user
+ * 
+ * @param {string} username       - User's first name
+ * 
+ * @return {void}            
+ */
+export function displayAccInfo(username: string) {
+
 }
