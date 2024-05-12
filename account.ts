@@ -1,13 +1,23 @@
 // This handles the account processes
 
+interface DataStore {
+    userCount: number;
+    users: UserData[];
+}
+
 interface UserData {
-    username: string;
+    userName: string;
     firstName: string;
     lastName: string;
     email: string;
     password: string;
     age: number;
     wallet: number;
+}
+
+const dataStore: DataStore = {
+    userCount: 0,
+    users: []
 }
 
 /**
@@ -23,7 +33,38 @@ interface UserData {
  * @return {boolean}            - True if successfully registered account
  */
 export function registerAccount(firstName: string, lastName: string, userName: string, email: string, age: number, password: string): boolean {
+    if (firstName.length < 2 && lastName.length < 2) {
+        return false;
+    }
 
+    const userExists = dataStore.users.find((user) => user.userName === userName)
+    if (userName.length < 5 && userExists !== undefined) {
+        return false;
+    }
+    
+    if (password.length < 8) {
+        return false;
+    }
+
+    if (email.length < 8) {
+        return false;
+    }
+
+    if (age < 17) {
+        return false;
+    }
+
+    const newUser = {
+        firstName: firstName,
+        lastName: lastName,
+        userName: userName,
+        email: email,
+        age: age,
+        password: password,
+        wallet: 500
+    }
+
+    dataStore.users.push(newUser);
     return false;
 }
 
